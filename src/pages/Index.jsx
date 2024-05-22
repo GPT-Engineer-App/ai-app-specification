@@ -3,7 +3,7 @@ import { Container, VStack, Heading, Text, Box, Button } from "@chakra-ui/react"
 import LeadForm from "../components/LeadForm";
 import EmailForm from "../components/EmailForm";
 
-const Index = () => {
+const Index = ({ user }) => {
   const [leads, setLeads] = useState([]);
   const [selectedLead, setSelectedLead] = useState(null);
 
@@ -20,7 +20,7 @@ const Index = () => {
   return (
     <Container centerContent maxW="container.md" py={8}>
       <VStack spacing={8} width="full">
-        <Heading as="h1" size="xl">CRM Application</Heading>
+        <Heading as="h1" size="xl">Welcome, {user.username}</Heading>
         <LeadForm onAddLead={addLead} />
         <Box width="full">
           <Heading as="h2" size="lg" mb={4}>Leads</Heading>
